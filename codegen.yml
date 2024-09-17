@@ -1,0 +1,7 @@
+schema: http://localhost:4000/graphql # URL de tu API GraphQL
+documents: src/data/**/*.graphql # Ruta a tus documentos GraphQL (queries, mutations, etc.)
+generates:
+  src/generated/graphql.ts: # Ruta donde se generarán los tipos y hooks
+    plugins:
+      - "typescript"
+      - "typescript-react-apollo"

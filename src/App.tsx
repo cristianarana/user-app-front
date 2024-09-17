@@ -1,16 +1,22 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { Button, Container } from "@mui/material";
-import { NavBar } from "./common/NavBar";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
 import { HandleRouter } from "./Router";
 
+const client = new ApolloClient({
+  uri: "http://localhost:4000/graphql",
+  cache: new InMemoryCache(),
+  credentials: "include",
+});
+
 function App() {
   return (
-    <BrowserRouter>
-      <HandleRouter />
-    </BrowserRouter>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <HandleRouter />
+      </BrowserRouter>
+    </ApolloProvider>
   );
 }
 
