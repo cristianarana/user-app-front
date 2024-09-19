@@ -4,7 +4,6 @@ import {
   Container,
   Grid2,
   Paper,
-  Stack,
   TextField,
   Typography,
 } from "@mui/material";
